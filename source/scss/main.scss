@@ -1,0 +1,896 @@
+$language: arabic;
+$path: '/news/special/2014/newsspec_7104/content/' + $language + '/css/f/';
+
+$screen-width-offset: 16px;
+
+$bar-colour: #47708d;
+$lebanon: #947896;
+$jordan: #cd6666;
+$iraq: #81b3c2;
+$egypt: #fdb515;
+
+$main-text-colour: #505050;
+$news-orange: #d1700e;
+
+$largest-value: 354641;
+/* $deraa-total: 354641; */
+$homs-total: 329109;
+$aleppo-total: 251298;
+$ruraldamascus-total: 220349;
+$damascus-total: 154076;
+$hassakeh-total: 147644;
+$idlib-total: 138253;
+$hama-total: 95502;
+$raqqa-total: 45128;
+$deirezzor-total: 24023;
+$lattakia-total: 7394;
+$quneitra-total: 7886;
+$tartous-total: 4075;
+$suweida-total: 1008;
+$notknown-total: 19137;
+
+@import "news_special/defaults";
+
+.main img {
+	width: 100%;
+}
+
+.main {
+
+	.sr-hide,
+	.sr-cta,
+	.sr-region__blocks-key,
+	.sr-region--breakdown--demographics,
+	.sr-region--breakdown--destinations,
+	.sr-region__map-container {
+		display: none;
+	}
+
+	.sr-region__list-header-section {
+
+		padding: 0;
+		margin: 0;
+
+		h2 {
+			display: block;
+			color: $main-text-colour;
+			font-size: 1.00em;
+			margin: 0 0 8px 0;
+
+		}
+
+		.sr-region__list-header--titles {
+			width: 86px;
+			text-align: right;
+			float: left;
+		}
+
+		.sr-region__list-header--figures {
+			text-align: right;
+				margin: 0 8px 8px 0;
+		}
+
+	}
+
+	.sr-regions__list {
+
+		clear: both;
+		padding: 0;
+		margin: 0;
+
+		li {
+			list-style-type: none;
+			position: relative;
+			margin: 0 0 6px 0;
+
+			span {
+				display: block;
+				min-height: 20px;
+				color: $main-text-colour;
+			}
+
+			.sr-region__name {
+				position: absolute;
+				left: 0;
+				top: 2px;
+				width: 86px;
+				text-align: right;
+				margin: 0 8px 0 0;
+			}
+
+			.sr-region__bar-wrapper {
+				position: relative;
+				margin: 0 84px 0 94px;
+
+				.sr-region__bar {
+					background-color: $bar-colour;
+				}
+			}
+
+			.sr-region__fig {
+				position: absolute;
+				right: 0;
+				top: 2px;
+				width: 68px;
+				text-align: right;
+				margin: 0 8px 0 0;
+			}
+
+		}
+
+
+		li[data-name='notknown'] {
+			display: none;
+		}
+
+		li[data-name='deraa'] .sr-region__bar {
+			width: 100%;
+		}
+
+		li[data-name='homs'] .sr-region__bar {
+			width: ($homs-total / $largest-value) * 100%;
+		}
+
+		li[data-name='aleppo'] .sr-region__bar {
+			width: ($aleppo-total / $largest-value) * 100%;
+		}
+
+		li[data-name='ruraldamascus'] .sr-region__bar {
+			width: ($ruraldamascus-total / $largest-value) * 100%;
+		}
+
+		li[data-name='damascus'] .sr-region__bar {
+			width: ($damascus-total / $largest-value) * 100%;
+		}
+
+		li[data-name='hassakeh'] .sr-region__bar {
+			width: ($hassakeh-total / $largest-value) * 100%;
+		}
+
+		li[data-name='idlib'] .sr-region__bar {
+			width: ($idlib-total / $largest-value) * 100%;
+		}
+
+		li[data-name='hama'] .sr-region__bar {
+			width: ($hama-total / $largest-value) * 100%;
+		}
+
+		li[data-name='raqqa'] .sr-region__bar {
+			width: ($raqqa-total / $largest-value) * 100%;
+		}
+
+		li[data-name='deirezzor'] .sr-region__bar {
+			width: ($deirezzor-total / $largest-value) * 100%;
+		}
+
+		li[data-name='lattakia'] .sr-region__bar {
+			width: ($lattakia-total / $largest-value) * 100%;
+		}
+
+		li[data-name='quneitra'] .sr-region__bar {
+			width: ($quneitra-total / $largest-value) * 100%;
+		}
+
+		li[data-name='tartous'] .sr-region__bar {
+			width: ($tartous-total / $largest-value) * 100%;
+		}
+
+		li[data-name='suweida'] .sr-region__bar {
+			width: ($suweida-total / $largest-value) * 100%;
+		}
+
+		li[data-name='notknown'] .sr-region__bar {
+			width: ($notknown-total / $largest-value) * 100%;
+		}
+
+	}
+
+	@include respondMinMax (false, 973px - $screen-width-offset) {
+
+		.sr-regions__list {
+
+			li[data-name='ruraldamascus'] .sr-region__name {
+				line-height: 0.86em;
+				margin-top: -2px;
+			}
+		}
+
+	}
+
+	@include respondMinMax (480px - $screen-width-offset, false) {
+
+		.sr-regions__list {
+
+			li[data-name='notknown'] {
+				display: block;
+			}
+		}
+
+	}
+
+	@include respondMinMax (768px - $screen-width-offset, false) {
+
+		.sr-cta {
+			display: block;
+			font-size: 1.375em;
+			color: $news-orange;
+			margin: 0 0 0 16px;
+			padding: 16px 0 16px 58px;
+			background: url($path + 'nav_sprite.png') no-repeat 0 2px transparent;
+		}
+
+		.sr-region__blocks-key {
+			display: block;
+			margin: -59px 0 0 207px;
+			float: left;
+
+			.sr-key-ident {
+				display: inline-block;
+				width: 12px;
+				height: 0;
+				line-height: 1.00em;
+				border-bottom: 12px solid $bar-colour;
+				margin: 0 4px 0 0;
+			}
+
+			.sr-flow {
+				font-size: 0.938em;
+				font-weight: normal;
+			}
+		}
+
+		.sr-region__list-header-section {
+
+			margin-left: 64px;
+			width: 380px;
+
+			h2 {
+				font-weight: normal;
+
+			}
+
+			.sr-region__list-header--titles {
+				width: 96px;
+				margin-right: 16px;
+				text-align: right;
+				float: left;
+			}
+
+			.sr-region__list-header--figures {
+				width: 68px;
+				text-align: right;
+				margin: 0 8px 8px 0;
+				margin-left: 189px;
+				float: right;
+			}
+
+		}
+
+		.sr-regions__list {
+			margin-left: 68px;
+			width: 380px;
+			float: left;
+
+			li {
+
+				position: relative;
+				height: 28px;
+
+				a {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					cursor: pointer;
+				}
+
+				.sr-region__name {
+					width: 96px;
+					margin-right: 16px;
+				}
+				.sr-region__bar-wrapper {
+					position: relative;
+					padding-top: 9px;
+					margin: 0 84px 0 110px;
+					width: 189px;
+					top: 0;
+
+					.sr-region__bar {
+						width: auto;
+						clear: both;
+						background: none;
+
+						.sr-bar {
+							height: 4px;
+							border-bottom: 1px solid #fff;
+							background: url($path + 'blue_4x4_square.png') repeat-x 0 0 transparent;
+							background-size: 5px 5px;
+						}
+
+						/* Individually rendered blocks - too slow in IE! */
+						.sr-block {
+							display: block;
+							float: left;
+							height: 4px;
+							width: 4px;
+							border-right: 1px solid #fff;
+							border-bottom: 1px solid #fff;
+							/*margin: 0 1px 1px 0;*/
+							background-color: $bar-colour;
+
+						    /*-webkit-transform: scale(0.85);
+						    -webkit-transform-origin: 0 0;*/
+						}
+					}
+
+				}
+
+				/* transition: opacity 300ms; */
+
+			}
+
+			li[data-name="deraa"] {
+
+				height: 64px;
+
+				span {
+					top: 15px;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+			}
+
+			li[data-name="homs"] {
+
+				height: 56px;
+
+				span {
+					top: 13px;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+			}
+
+			li[data-name="aleppo"] {
+
+				height: 48px;
+
+				span {
+					top: 8px;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+			}
+
+			li[data-name="ruraldamascus"] {
+
+				height: 44px;
+
+				span {
+					top: 5px;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+			}
+
+			li[data-name="damascus"] {
+
+				height: 36px;
+
+				span {
+					top: 3px;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+			}
+
+			li[data-name="hassakeh"], 
+			li[data-name="idlib"] {
+
+				height: 36px;
+
+				span {
+					top: 1px;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+			}
+
+			li[data-name="hama"] .sr-region__bar-wrapper {
+				padding-top: 4px;
+			}
+
+			li[data-name="raqqa"] .sr-region__bar-wrapper {
+				padding-top: 7px;
+			}
+
+			.sr-knocked-back {
+				opacity: 0.35;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+				filter: alpha(opacity=35);
+			}
+
+			.sr-highlighted {
+				font-weight: bold;
+			}
+
+		}
+
+		.sr-region__map-container {
+			display: block;
+			position: relative;
+			float: left;
+			margin-left: 30px;
+			margin-bottom: 10px;
+			height: 253px;
+			width: 280px;
+
+			.sr-map {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			.sr-map--base {
+				background: url($path + 'base_region_map_' + $language + '.png') no-repeat -1px -1px transparent;
+			}
+			.sr-region--deraa {
+				background: url($path + 'deraa-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--homs {
+				background: url($path + 'homs-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--aleppo {
+				background: url($path + 'aleppo-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--ruraldamascus {
+				background: url($path + 'rural_damascus-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--damascus {
+				background: url($path + 'damascus-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--hassakeh {
+				background: url($path + 'hassakeh-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--idlib {
+				background: url($path + 'idlib-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--hama {
+				background: url($path + 'hama-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--raqqa {
+				background: url($path + 'raqqa-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--deirezzor {
+				background: url($path + 'deir_ezzor-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--lattakia {
+				background: url($path + 'lattakia-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--quneitra {
+				background: url($path + 'quneitra-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--tartous {
+				background: url($path + 'tartous-01.png') no-repeat 0 0 transparent;
+			}
+			.sr-region--suweida {
+				background: url($path + 'suweida-01.png') no-repeat 0 0 transparent;
+			}
+		}
+
+		.sr-region--breakdown--demographics,
+		.sr-region--breakdown--destinations {
+			display: block;
+			float: left;
+			margin-left: 32px;
+			margin-top: 12px;
+			width: 272px;
+			color: $main-text-colour;
+
+			h3 {
+				font-size: 1.00em;
+			}
+
+			ul {
+				margin: 0 0 0 0;
+				padding: 0;
+
+				li {
+					display: block;
+					list-style-type: none;
+					padding: 0;
+				}
+
+			}
+		}
+
+		.sr-region--breakdown--demographics {
+
+			ul {
+
+				li {
+					float: left;
+					margin: 0 12px 16px 0;
+
+					span {
+						display: block;
+					}
+
+					.sr-breakdown--figure {
+						color: $bar-colour;
+					}
+
+				}
+
+				li:last-of-type {
+					margin: 0 0 16px 0;
+
+				}
+			}
+
+		}
+
+		.sr-region--breakdown--destinations {
+
+			ul {
+
+				li {
+					clear: both;
+					margin: 0 0 8px 0;
+					font-size: 0.938em;
+
+					span {
+						line-height: 24px;
+					}
+
+					.sr-breakdown--label {
+						display: block;
+						float: left;
+						width: 72px;
+					}
+
+					.sr-breakdown--bar-wrapper {
+						position: relative;
+						display: block;
+						float: left;
+						width: 140px;
+						height: 24px;
+						margin-bottom: 8px;
+
+						.sr-breakdown--bar {
+							position: absolute;
+							display: block;
+							height: 100%;
+							width: 0;
+
+							-webkit-transition: width 400ms ease;
+							-moz-transition: width 400ms ease;
+							-o-transition: width 400ms ease;
+							transition: width 400ms ease;
+						}
+
+					}
+
+					.sr-breakdown--figure {
+						position: absolute;
+						padding: 0 0 0 8px;
+						left: 0;
+
+						-webkit-transition: padding-left 100ms ease;
+						-moz-transition: padding-left 100ms ease;
+						-o-transition: padding-left 100ms ease;
+						transition: padding-left 100ms ease;
+
+						-webkit-transition: left 400ms ease;
+						-moz-transition: left 400ms ease;
+						-o-transition: left 400ms ease;
+						transition: left 400ms ease;
+					}
+
+				}
+
+				.sr-region--lebanon .sr-breakdown--bar-wrapper .sr-breakdown--bar {
+					background-color: $lebanon;
+				}
+
+				.sr-region--jordan .sr-breakdown--bar-wrapper .sr-breakdown--bar {
+					background-color: $jordan;
+				}
+
+				.sr-region--iraq .sr-breakdown--bar-wrapper .sr-breakdown--bar {
+					background-color: $iraq;
+				}
+
+				.sr-region--egypt .sr-breakdown--bar-wrapper .sr-breakdown--bar {
+					background-color: $egypt;
+				}
+
+
+			}
+
+		}
+
+	}
+
+	@include respondMinMax (974px - $screen-width-offset, false) {	
+
+		.sr-cta {
+			margin: 0 0 0 16px;
+		}
+
+		.sr-region__blocks-key {
+			margin: -56px 0 0 307px;
+		}
+
+		.sr-region__list-header-section {
+
+			margin-left: 76px;
+			width: 532px;
+
+			h2 {
+				font-weight: normal;
+
+			}
+
+			.sr-region__list-header--titles {
+				width: 132px;
+				margin-right: 16px;
+			}
+
+			.sr-region__list-header--figures {
+				width: 68px;
+				margin: 0 8px 8px 0;
+				margin-left: 304px;
+			}
+
+		}
+
+		.sr-regions__list {
+			margin-left: 76px;
+			width: 532px;
+
+			li {
+
+				.sr-region__name {
+					width: 132px;
+					margin-right: 16px;
+				}
+				.sr-region__bar-wrapper {
+					position: relative;
+					margin: 0 84px 0 146px;
+					width: 304px;
+					top: 0;
+				}
+
+			}
+
+			li[data-name="deraa"] {
+
+				height: 48px;
+
+				span {
+					top: 6px;
+				}
+				.sr-region__bar-wrapper {
+					top: 0;
+				}
+			}
+
+			li[data-name="homs"] {
+
+				height: 44px;
+
+				span {
+					top: 4px;
+				}
+				.sr-region__bar-wrapper {
+					top: 0;
+				}
+			}
+
+			li[data-name="aleppo"] {
+
+				height: 40px;
+
+				span {
+					top: 2px;
+				}
+				.sr-region__bar-wrapper {
+					top: 0;
+				}
+			}
+
+			li[data-name="ruraldamascus"] {
+
+				height: 32px;
+
+				span {
+					top: 0;
+				}
+
+				.sr-region__bar-wrapper {
+					padding-top: 0;
+					top: 0;
+				}
+
+			}
+
+			li[data-name="damascus"] {
+
+				height: 32px;
+
+				span {
+					top: 0;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 2px;
+					top: 0;
+				}
+			}
+
+			li[data-name="hassakeh"] {
+
+				height: 30px;
+			}
+
+			li[data-name="hassakeh"],
+			li[data-name="idlib"] {
+
+				height: 28px;
+
+				span {
+					top: 0;
+				}
+				.sr-region__bar-wrapper {
+					padding-top: 1px;
+					top: 0;
+				}
+			}
+
+			li[data-name="hama"] .sr-region__bar-wrapper {
+				padding-top: 7px;
+			}
+
+			li[data-name="raqqa"] .sr-region__bar-wrapper {
+				padding-top: 9px;
+			}
+
+		}
+
+		.sr-region__map-container {
+			margin-left: 46px;
+			width: 302px;
+		}
+
+		.sr-region--breakdown--demographics,
+		.sr-region--breakdown--destinations {
+			margin-left: 48px;
+			width: 302px;
+		}
+
+		.sr-region--breakdown--demographics {
+
+			ul {
+
+				li {
+					margin: 0 16px 16px 0;
+				}
+
+			}
+
+		}
+
+		.sr-region--breakdown--destinations {
+
+			ul {
+
+				li {
+
+					.sr-breakdown--bar-wrapper {
+						width: 164px;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+html[lang="ar"] .sr-cta,
+html[lang="fa"] .sr-cta {
+	direction: rtl;
+	margin: 0 16px 0 0;
+	padding: 16px 58px 16px 0;
+	background: url('/news/special/2014/newsspec_7104/content/' + $language + '/css/f/nav_sprite.png') no-repeat right -2px transparent;
+}
+
+
+html[lang="ar"],
+html[lang="fa"] {
+
+	.main {
+
+		@include respondMinMax (768px - $screen-width-offset, false) {
+
+			.sr-region--breakdown--destinations,
+			.sr-region--breakdown--demographics {
+
+				h3 {
+					direction: rtl;
+				}
+
+			}
+
+			.sr-region__list-header-section {
+				margin-right: 64px;
+				width: 380px;
+			}
+
+			.sr-region__blocks-key {
+				clear: both;
+
+				.sr-flow {
+					direction: rtl;		
+
+					.sr-key-ident {
+						margin: 0 0 0 4px;
+					}
+				}
+			}
+
+			.sr-region--breakdown--demographics {
+
+				ul {
+					direction: right;
+
+					li {
+
+						span {
+							text-align: right;
+						}
+					}
+
+				}
+			}
+
+		}
+
+
+		@include respondMinMax (974px - $screen-width-offset, false) {
+
+			.sr-region__list-header-section {
+				width: 532px;
+			}
+
+			.sr-region--breakdown--demographics {
+			}
+
+
+		}
+
+	}
+
+}
+
+
